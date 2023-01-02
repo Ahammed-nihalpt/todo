@@ -19,7 +19,6 @@ function App() {
       </div>
       <div className="subHeading">
         <br />
-        <h2>Whoop, it's</h2>
       </div>
       <div className="input">
         <input type="text" value={toDo} onChange={(e) => settoDo(e.target.value)} placeholder="🖊️ Add item..." />
@@ -66,7 +65,7 @@ function App() {
                     name=""
                     id=""
                     className="che" />
-                  <p>{value.text}</p>
+                  <p>{value.status === true ? <s>{value.text}</s> : value.text}</p>
                 </div>
                 <div className="right">
                   <i className='far fa-trash-alt delete' onClick={() => { handleDeleteClick(value.id) }}></i>
@@ -93,7 +92,7 @@ function App() {
                       name=""
                       id=""
                       className="che" />
-                    <p>{value.text}</p>
+                    <p>{value.status === true ? <s>{value.text}</s> : value.text}</p>
                   </div>
                   <div className="right">
                     <i className='far fa-trash-alt delete' onClick={() => { handleDeleteClick(value.id) }}></i>
